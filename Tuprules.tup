@@ -1,0 +1,11 @@
+web = $(TUP_CWD)/web
+js = $(web)/static/js
+css = $(web)/static/css
+tools = $(TUP_CWD)/tools
+minjar = java -jar $(tools)/yuicompressor-2.4.2.jar
+
+.gitignore
+
+!minjs = |> awk 'FNR==1 && NR!=1{print ";"}{print}' %f | uglifyjs -nc > %o |>
+!mincss = |> cat %f | $(minjar) --type css > %o |>
+!scss = |> cat %f | sass --scss < %f > %o |>
