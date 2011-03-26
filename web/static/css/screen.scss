@@ -1,7 +1,12 @@
 @import "compass/css3";
 
 html { background: #eee; }
-body { background: #fff; margin: 0 auto; width: 951px; @include box-shadow; }
+body { background: #fff; margin: 0 auto; width: 950px; @include box-shadow; }
+
+code { font-family: monospace; background: #eee; }
+
+section { position: relative; overflow: hidden; }
+section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; }
 
 nav { position: fixed; height: 100%; border-right: solid 2px #333; }
 
