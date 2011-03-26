@@ -8,4 +8,4 @@ minjar = java -jar $(tools)/yuicompressor-2.4.2.jar
 
 !minjs = |> awk 'FNR==1 && NR!=1{print ";"}{print}' %f | uglifyjs -nc > %o |>
 !mincss = |> cat %f | $(minjar) --type css > %o |>
-!scss = |> cat %f | sass --scss < %f > %o |>
+!scss = |> cat %f | sass -C --scss < %f > %o |>

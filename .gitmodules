@@ -1,0 +1,6 @@
+[submodule "deps/compass"]
+	path = deps/compass
+	url = git://github.com/chriseppstein/compass.git
+[submodule "deps/blueprint"]
+	path = deps/blueprint
+	url = git://github.com/joshuaclayton/blueprint-css.git
