@@ -1,0 +1,3 @@
+include_rules
+
+: usc.bmp |> convert usc.bmp usc.jpg |> usc.jpg
