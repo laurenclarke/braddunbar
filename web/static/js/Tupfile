@@ -1,0 +1,3 @@
+include_rules
+
+: backbone.js index.js |> !minjs |> _index.js

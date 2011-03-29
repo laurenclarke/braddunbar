@@ -4,3 +4,6 @@
 [submodule "deps/blueprint"]
 	path = deps/blueprint
 	url = git://github.com/joshuaclayton/blueprint-css.git
+[submodule "deps/backbone"]
+	path = deps/backbone
+	url = git://github.com/documentcloud/backbone.git
