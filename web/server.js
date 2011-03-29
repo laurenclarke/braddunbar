@@ -9,7 +9,10 @@ app.configure(function(){
   app.set('view engine', 'ejs');
   app.set('host', 'braddunbar.net');
   app.set('title', 'brad dunbar');
-  app.set('view options', { app: app });
+  app.set('view options', {
+    app: app,
+    hash: require('./static/hash')
+  });
 });
 
 app.get('/', function(req, res){

@@ -1,0 +1,3 @@
+include_rules
+
+: css/*.css css/blueprint/*.css js/*.js img/*.jpg |> !hash |> hash.js

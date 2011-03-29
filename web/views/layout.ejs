@@ -9,14 +9,14 @@
 	<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Six+Caps'>
 
 	<% if(app.settings.env == 'production'){ %>
-		<link rel='stylesheet' href='/css/_screen.css'>
+		<link rel='stylesheet' href='<%= hash['/css/_screen.css'] %>'>
 	<% }else{ %>
-		<link rel='stylesheet' href='/css/blueprint/screen.css'>
-		<link rel='stylesheet' href='/css/screen.css'>
+		<link rel='stylesheet' href='<%= hash['/css/blueprint/screen.css'] %>'>
+		<link rel='stylesheet' href='<%= hash['/css/screen.css'] %>'>
 	<% } %>
 
-	<!--[if lt IE 8]><link rel='stylesheet' href='/css/blueprint/ie.css'><![endif]-->
-	<!--[if lt IE 9]><script src='/js/html5.js'></script><![endif]-->
+	<!--[if lt IE 8]><link rel='stylesheet' href='<%= hash['/css/blueprint/ie.css'] %>'><![endif]-->
+	<!--[if lt IE 9]><script src='<%= hash['/js/html5.js'] %>'></script><![endif]-->
 </head>
 <body>
 	<%- body %>
