@@ -6,7 +6,7 @@ body { background: #fff; margin: 0 auto; width: 950px; @include box-shadow; }
 code { font-family: monospace; background: #eee; }
 
 section { position: relative; overflow: hidden; padding-bottom: 30px; margin-bottom: 15px; }
-section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; }
+section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; }
 
 nav { position: fixed; height: 100%; border-right: solid 2px #333; }
 
