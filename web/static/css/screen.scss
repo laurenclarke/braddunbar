@@ -3,6 +3,9 @@
 html { background: #eee; }
 body { background: transparent; margin: 0 auto; width: 950px; }
 
+a, a:visited, a:active { color: #000; @include transition(all, .5s, ease); }
+a:hover { color: red; }
+
 code { font-family: monospace; background: #eee; }
 
 .sections { @include box-shadow; background: #fff; }
