@@ -19,13 +19,15 @@ jQuery(function($){
   var App = Backbone.View.extend({
 
     initialize: function(){
-      var ul = $('nav ul');
+      var nav = $('nav');
+
+      this.header = nav.find('h1');
 
       this.sections = $('section').map(function(){
         var el = $(this);
         return new Section({
           el: el,
-          a: ul.find('a[href=#' + el.attr('id') + ']')
+          a: nav.find('a[href=#' + el.attr('id') + ']')
         });
       });
 
@@ -50,7 +52,8 @@ jQuery(function($){
         }
       }
 
-      if(this.active) this.active.select()
+      if(this.active) this.active.select();
+      this.header[this.active ? 'removeClass' : 'addClass']('hidden');
     }, 50)
 
   });
