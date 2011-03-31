@@ -15,6 +15,10 @@ app.configure(function(){
   });
 });
 
+app.configure('production', function(){
+  app.use(express.logger());
+});
+
 app.get('/', function(req, res){
   res.render('index');
 });
