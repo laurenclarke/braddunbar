@@ -45,6 +45,12 @@ jQuery(function($){
 
       if(this.active) this.active.deselect();
 
+      if(top < sections[0].el.offset().top){
+        this.header.addClass('hidden');
+        return;
+      }
+
+      this.active = sections[sections.length - 1];
       for(var i = 0, l = sections.length; i < l; i++){
         if(sections[i].el.offset().top > top){
           this.active = sections[i-1];
@@ -52,8 +58,8 @@ jQuery(function($){
         }
       }
 
-      if(this.active) this.active.select();
-      this.header[this.active ? 'removeClass' : 'addClass']('hidden');
+      this.active.select();
+      this.header.removeClass('hidden');
     }, 50)
 
   });
