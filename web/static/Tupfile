@@ -1,3 +1,7 @@
 include_rules
 
 : css/*.css css/blueprint/*.css js/*.js img/*.jpg |> !hash |> hash.js
+
+: $(tools)/SixCaps.ttf \
+	|> convert -size 100x100 xc:none -font %f -pointsize 100 -draw "text 20,100 'bd'" -trim %o \
+	|> favicon.ico
