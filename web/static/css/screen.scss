@@ -12,7 +12,7 @@ code { font-family: monospace; background: #eee; }
 section { position: relative; overflow: hidden; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd; }
 section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; }
 
-nav { position: fixed; right: 150px; height: 100%; }
+nav { position: fixed; left: 50%; margin-left: 320px; }
 
 h1, h2, nav ul li { font-family: 'Six Caps'; }
 h1 {
