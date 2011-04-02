@@ -3,6 +3,8 @@
 html { background: #eee; }
 body { background: transparent; margin: 0 auto; width: 950px; }
 
+header h1 { text-align: center; }
+
 a, a:visited, a:active { color: #000; @include transition(all, .5s, ease); }
 a:hover { color: red; }
 
@@ -37,7 +39,9 @@ nav ul {
 
 #education { background: url(/img/usc.jpg) center 50px no-repeat; height: 325px; }
 
-img.usc { display: block; }
-
 .heart { @include transition(all, .5s, ease); }
+
 article:hover .heart { color: red; }
+article img { display: block; margin: 0 auto; }
+
+footer h2 { text-align: center; }

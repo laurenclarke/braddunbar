@@ -1,3 +1,5 @@
 include_rules
 
-: usc.bmp |> convert usc.bmp usc.jpg |> usc.jpg
+: usc.bmp |> convert %f %o |> usc.jpg
+: nodejs.png |> convert %f -colorspace Gray -scale 50%% %o |> nodejs.jpg
+: html5.png |> convert %f -colorspace Gray -resize 64x64 %o |> html5-gray.png

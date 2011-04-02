@@ -41,8 +41,6 @@ jQuery(function($){
     update: _.debounce(function(){
       var top = this.el.scrollTop(), sections = this.sections;
 
-      console.log(top, _.pluck(sections, 'top'));
-
       if(this.active) this.active.deselect();
 
       if(top < sections[0].el.offset().top){
