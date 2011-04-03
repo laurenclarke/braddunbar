@@ -7,3 +7,6 @@ include_rules
 
 : html5.png |> convert %f -resize 64x64 %o |> html5-small.png
 : html5.png |> convert %f -colorspace Gray -resize 64x64 %o |> html5-small-gray.png
+
+: javascript.jpg |> convert %f -scale 25%% %o |> javascript-small.jpg
+: javascript.jpg |> convert %f -colorspace Gray -scale 25%% %o |> javascript-small-gray.jpg
