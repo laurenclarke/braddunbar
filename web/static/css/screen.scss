@@ -11,8 +11,20 @@ a:hover { color: red; }
 code { font-family: monospace; background: #eee; }
 
 .sections { @include box-shadow; background: #fff; }
-section { position: relative; overflow: hidden; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd; }
+.heart { @include transition(all, .5s, ease); }
+
+section {
+  position: relative; overflow: hidden; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd;
+  .fadein img { @include opacity(0); @include transition(all, .5s); }
+}
+section.active, section:hover {
+  .fadein img { @include opacity(100); }
+  .heart { color: red; }
+}
 section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; }
+
+.html5-bg { background: url(/img/html5-small-gray.png) no-repeat; }
+.nodejs-bg { background: url(/img/nodejs-small-gray.jpg) center no-repeat; }
 
 nav { position: fixed; left: 50%; margin-left: 320px; }
 
@@ -39,9 +51,7 @@ nav ul {
 
 #education { background: url(/img/usc.jpg) center 50px no-repeat; height: 325px; }
 
-.heart { @include transition(all, .5s, ease); }
-
-article:hover .heart { color: red; }
 article img { display: block; margin: 0 auto; }
 
 footer h2 { text-align: center; }
+

@@ -7,11 +7,11 @@ jQuery(function($){
     },
 
     select: function(){
-      this._a.addClass('active');
+      this.el.add(this._a).addClass('active');
     },
 
     deselect: function(){
-      this._a.removeClass('active');
+      this.el.add(this._a).removeClass('active');
     }
 
   });
