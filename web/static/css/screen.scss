@@ -21,7 +21,7 @@ section.active, section:hover {
   .fadein img { @include opacity(100); }
   .heart { color: red; }
 }
-section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; }
+section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; color: #ddd; }
 
 .html5-bg { background: url(/img/html5-small-gray.png) no-repeat; }
 .nodejs-bg { background: url(/img/nodejs-small-gray.jpg) center no-repeat; }
