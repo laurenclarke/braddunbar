@@ -55,7 +55,12 @@ nav ul {
 
 article img { display: block; margin: 0 auto; }
 
+@media all and (max-device-width:480px) {
+  h2 span { display: none; }
+  nav { display: none; }
+  body, .container { width: 790px; }
+}
+
 @media all and (max-width: 949px) {
   nav { display: none; }
 }
-

@@ -8,6 +8,6 @@ hash = $(TUP_CWD)/hash.sh
 .gitignore
 
 !minjs = |> awk 'FNR==1 && NR!=1{print ";"}{print}' %f | uglifyjs -nc > %o |>
-!mincss = |> cat %f | $(minjar) --type css | sed 's/@charset/\n@charset/g' > %o |>
+!mincss = |> awk 'FNR==1 && NR!=1{print "\n"}{print}' %f > %o |>
 !scss = |> cat %f | sass -C --scss < %f > %o |>
 !hash = |> $(hash) %f > %o |>
