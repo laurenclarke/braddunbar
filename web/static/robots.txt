@@ -1,1 +1,2 @@
+Sitemap: http://braddunbar.net/sitemap.xml
 User-agent: *
