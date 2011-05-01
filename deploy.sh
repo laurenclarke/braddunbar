@@ -2,7 +2,7 @@
 git submodule update --init && \
 if [ ! -d .tup ] ; then tup init; fi && \
 tup upd && \
-ssh -t brad@braddunbar.net sudo stop braddunbar || \
+ssh -t brad@braddunbar.net sudo stop braddunbar && \
 rsync \
 	-f "- *.scss" \
 	-f "- static/css/compass" \
