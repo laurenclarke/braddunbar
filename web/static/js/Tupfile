@@ -1,3 +1,4 @@
 include_rules
 
-: underscore.js backbone.js index.js |> !minjs |> _index.js
+: foreach *.coffee |> coffee -c %f |> %B.js
+: underscore.js backbone.js index.js |> !minjs |> index.min.js

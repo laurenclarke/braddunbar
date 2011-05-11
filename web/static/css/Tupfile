@@ -2,5 +2,5 @@
 include_rules
 
 : foreach *.scss |> !scss |> %B.css
-: blueprint/screenprint.css screen.scss |> !minscss |> _screen.css
-: ie.scss |> !minscss |> _ie.css
+: blueprint/screenprint.css screen.scss |> !minscss |> screen.min.css
+: ie.scss |> !minscss |> ie.min.css

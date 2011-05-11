@@ -237,7 +237,7 @@
 </div>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery<% if(app.settings.env == 'production'){ %>.min<% } %>.js'></script>
 <% if(app.settings.env == 'production'){ %>
-<script src='<%= hash['/js/_index.js'] %>'></script>
+<script src='<%= hash['/js/index.min.js'] %>'></script>
 <% }else{ %>
 <script src='<%= hash['/js/underscore.js'] %>'></script>
 <script src='<%= hash['/js/backbone.js'] %>'></script>

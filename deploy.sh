@@ -9,6 +9,7 @@ rsync \
 	-f "- Tupfile" \
 	-f "- *.swp" \
 	-f "- *.swo" \
+	-f "- *.coffee" \
 	-f "- .gitignore" \
 	-f "- node_modules" \
 	-f "P node_modules" \
