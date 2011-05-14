@@ -11,4 +11,4 @@ hash = $(TUP_CWD)/hash.sh
 !mincss = |> awk 'FNR==1 && NR!=1{print "\n"}{print}' %f | $(minjar) --type css > %o |>
 !minscss = |> awk 'FNR==1 && NR!=1{print "\n"}{print}' %f | sass -C --scss | $(minjar) --type css | sed 's/@media/\n@media/g' | sed 's/and(/and (/g' > %o |>
 !scss = |> cat %f | sass -C --scss < %f > %o |>
-!hash = |> $(hash) %f > %o |>
+!hash = | $(hash) |> $(hash) %f > %o |> hash.coffee
