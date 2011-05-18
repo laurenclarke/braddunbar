@@ -7,6 +7,6 @@ hash = $(TUP_CWD)/hash.sh
 .gitignore
 
 !minjs = |> awk 'FNR==1 && NR!=1{print ";"}{print}' %f | uglifyjs -nc > %o |>
-!minscss = |> awk 'FNR==1 && NR!=1{print "\n"}{print}' %f | sass -C -t compressed --scss | sed 's/@media/\n@media/g' | sed 's/and(/and (/g' > %o |>
+!minscss = |> awk 'FNR==1 && NR!=1{print "\n"}{print}' %f | sass -C -t compressed --scss | sed 's/@media/\n@media/g' > %o |>
 !scss = |> cat %f | sass -C --scss < %f > %o |>
 !hash = | $(hash) |> $(hash) %f > %o |> hash.coffee
