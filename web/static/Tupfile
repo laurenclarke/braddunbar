@@ -1,6 +1,6 @@
 include_rules
 
-: css/*.css css/blueprint/*.css js/*.js img/*.jpg img/*.png |> !hash |>
+: css/*.css css/blueprint/*.css js/*.js img/*.jpg img/*.png |> $(hash) %f > %o |> hash.coffee
 : hash.coffee |> coffee -c %f |> %B.js
 
 : $(tools)/SixCaps.ttf \
