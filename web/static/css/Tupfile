@@ -3,6 +3,6 @@ include_rules
 
 : ../img/*.jpg ../img/*.png |> $(hashcss) %f > %o |> hash.rb
 
-: foreach *.scss | hash.rb |> $(scss) -r hash.rb %f > %o |> %B.css
-: blueprint/screenprint.css screen.scss | hash.rb |> $(scss) -m -r hash.rb %f > %o |> screen.min.css
-: ie.scss | hash.rb |> $(scss) -m -r hash.rb %f > %o |> ie.min.css
+: foreach *.scss | hash.rb $(scss) |> $(scss) -r hash.rb %f > %o |> %B.css
+: blueprint/screenprint.css screen.scss | hash.rb $(scss) |> $(scss) -m -r hash.rb %f > %o |> screen.min.css
+: ie.scss | hash.rb $(scss) |> $(scss) -m -r hash.rb %f > %o |> ie.min.css

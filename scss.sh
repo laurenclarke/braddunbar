@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sass="sass -C --scss"
+sass="sass -C --scss --trace"
 
 while getopts ":mr:" opt; do
 	case $opt in
