@@ -23,9 +23,9 @@ section.active, section:hover {
 }
 section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; color: #ddd; }
 
-.html5-bg { background: url(/img/html5-small-gray.png) no-repeat; }
-.nodejs-bg { background: url(/img/nodejs-small-gray.jpg) center no-repeat; }
-.javascript-bg { background: url(/img/javascript-small-gray.jpg) no-repeat; }
+.html5-bg { background: hash('../img/html5-small-gray.png') no-repeat; }
+.nodejs-bg { background: hash('../img/nodejs-small-gray.jpg') center no-repeat; }
+.javascript-bg { background: hash('../img/javascript-small-gray.jpg') no-repeat; }
 
 nav { position: fixed; left: 50%; margin-left: 320px; }
 
@@ -51,7 +51,7 @@ nav ul {
 .txr { text-align: right; }
 .txc { text-align: center; }
 
-#education { background: url(/img/usc.jpg) center 50px no-repeat; height: 325px; }
+#education { background: hash('../img/usc.jpg') center 50px no-repeat; height: 325px; }
 
 article img { display: block; margin: 0 auto; }
 

@@ -1,5 +1,5 @@
 
 include_rules
 
-: ie.css |> !minscss |> ie.min.css
+: ie.css |> $(scss) -m %f > %o |> ie.min.css
 : print.css screen.css |> echo -n "`cat screen.css`\n@media print {\n`cat print.css`\n}" > %o |> screenprint.css
