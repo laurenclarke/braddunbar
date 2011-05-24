@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 echo "module Sass::Script::Functions
   def hash(url)
