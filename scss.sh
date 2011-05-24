@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/bin/sh -e
+
+v=`sass -v | sed 's/[^0-9.]//g'`
+if [ -z `semver -v "$v" -r ">=3.1"` ]
+then
+	echo "sass@>=3.1 required"
+	false
+fi
 
 sass="sass -C --scss --trace"
 
