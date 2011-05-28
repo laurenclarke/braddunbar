@@ -18,5 +18,4 @@ while getopts ":mr:" opt; do
 done
 shift $((OPTIND-1))
 
-awk 'FNR==1 && NR!=1{print "\n"}{print}' $* | \
-	$sass | sed 's/@media/\n@media/g'
+awk 'FNR==1 && NR!=1{print "\n"}{print}' $* | $sass
