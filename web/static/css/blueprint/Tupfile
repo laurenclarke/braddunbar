@@ -2,4 +2,4 @@
 include_rules
 
 : ie.css |> $(scss) -m %f > %o |> ie.min.css
-: print.css screen.css |> echo -n "`cat screen.css`\n@media print {\n`cat print.css`\n}" > %o |> screenprint.css
+: print.css screen.css |> printf "%%s\n@media print {\n%%s\n}" "`cat screen.css`" "`cat print.css`" > %o |> screenprint.css
