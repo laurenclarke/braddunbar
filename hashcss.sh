@@ -1,17 +1,21 @@
 #!/bin/sh -e
 
-echo "module Sass::Script::Functions
+cat <<RUBY
+module Sass::Script::Functions
   def hash(url)
     assert_type url, :String
-    url = url.to_s.gsub(/^[\"']|[\"']$/, '')
-    Sass::Script::String.new({"
+    url = url.to_s.gsub(/^["']|["']$/, '')
+    Sass::Script::String.new({
+RUBY
 
 for f in $*
 do
-	echo "      '$f' => 'url(\\'$f?`git hash-object $f`\\')',"
+	printf "      '$f' => 'url(\\'$f?%s\\')',\n" "`git hash-object $f`"
 done
 
-echo "    }[url.to_s])
+cat <<RUBY
+    }[url.to_s])
   end
   declare :hash, :args => [:url]
-end"
+end
+RUBY
