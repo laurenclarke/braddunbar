@@ -4,7 +4,8 @@ express = require 'express'
 app = express.createServer()
 
 app.configure ->
-  app.use express.static(__dirname + '/static')
+  app.use express.static __dirname + '/static',
+    maxAge: 1000 * 60 * 60 * 24 * 14 # 2 weeks
   app.use express.bodyParser()
   app.set 'view engine', 'ejs'
   app.set 'host', 'braddunbar.net'
