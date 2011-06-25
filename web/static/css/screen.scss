@@ -1,12 +1,11 @@
 @import "compass/css3";
 
-html { background: #ccc; }
+html { background: hash('../img/paisley-texture.jpg') #ccc; background-attachment: fixed; }
 body { background: transparent; margin: 0 auto; width: 950px; }
 
 header h1 { text-align: center; }
 
 a, a:visited, a:active { color: #000; @include transition(all, .5s, ease); }
-a:hover { color: red; }
 
 code { font-family: monospace; background: #eee; }
 
@@ -34,7 +33,7 @@ h1 {
   font-weight: normal; padding: 10px 0 10px 0; font-size: 8em; margin-bottom: 0;
   @include transition(all, .5s, ease);
   a, a:visited, a:active { color: inherit; text-decoration: none; @include transition(all, .5s, ease); }
-  a:hover { color:red; }
+  a:hover { color: inherit; }
 }
 h1.hidden { @include opacity(0); a { cursor: default; } }
 h2 { font-size: 3em; margin-bottom: .25em; }
@@ -44,7 +43,7 @@ nav ul {
   li {
     list-style-type: none; padding: 0; margin: 0; line-height: 1em;
     a, a:visited, a:hover, a:active { color: inherit; text-decoration: none; @include transition(all, .5s); }
-    a:hover, a.active { padding-left: 10px; color: red; }
+    a:hover, a.active { padding-left: 10px; }
   }
 }
 

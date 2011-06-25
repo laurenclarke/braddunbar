@@ -10,3 +10,5 @@ include_rules
 
 : javascript.jpg |> convert %f -scale 25%% %o |> javascript-small.jpg
 : javascript.jpg |> convert %f -colorspace Gray -scale 25%% %o |> javascript-small-gray.jpg
+
+: paisley.jpg |> convert %f -colorspace gray -normalize -fill gray80 -colorize 90%% %o |> paisley-texture.jpg
