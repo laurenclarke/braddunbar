@@ -13,14 +13,16 @@ code { font-family: monospace; background: #eee; }
 .heart { @include transition(all, .5s, ease); }
 
 section {
-  position: relative; overflow: hidden; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd;
+  position: relative; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd;
   .fadein img { @include opacity(0); @include transition(all, .5s); }
 }
 section.active, section:hover {
   .fadein img { @include opacity(100); }
   .heart { color: red; }
 }
-section:after { content: '\00a7'; position: absolute; bottom: 0; left: 50%; font-family: 'Six Caps'; font-size: 3em; color: #ddd; }
+section:before { content: '\00a7'; position: absolute; bottom: -27px; left: 50%;
+  background: #fff; padding: 0 5px 0 5px; font-family: 'Six Caps'; font-size: 3em; color: #ddd; }
+section:after { content: ' '; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
 .html5-bg { background: hash('../img/html5-small-gray.png') no-repeat; }
 .nodejs-bg { background: hash('../img/nodejs-small-gray.jpg') center no-repeat; }
