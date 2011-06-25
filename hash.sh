@@ -4,5 +4,5 @@ echo "module.exports ="
 
 for f in $*
 do
-	echo "  '/$f': '/$f?`git hash-object $f`'"
+	printf "  '/$f': '/$f?%s'\n" "`git hash-object $f`"
 done
