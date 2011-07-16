@@ -11,4 +11,9 @@ include_rules
 : javascript.jpg |> convert %f -scale 25%% %o |> javascript-small.jpg
 : javascript.jpg |> convert %f -colorspace Gray -scale 25%% %o |> javascript-small-gray.jpg
 
+: pathable.png |> convert %f +level 80%%,100%% %o |> pathable-light.png
+: pathable-light.png |> convert %f -colorspace Gray %o |> pathable-light-gray.png
+
 : paisley.jpg |> convert %f -colorspace gray -normalize -fill gray80 -colorize 90%% %o |> paisley-texture.jpg
+
+: coffeescript.png |> convert %f -crop 60x50+0+0 %o |> coffeecup.png

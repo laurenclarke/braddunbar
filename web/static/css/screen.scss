@@ -14,10 +14,12 @@ code { font-family: monospace; background: #eee; }
 
 section {
   position: relative; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd;
-  .fadein img { @include opacity(0); @include transition(all, .5s); }
+  .fadein { @include transition(all, .5s); }
+  img.fadein { @include opacity(0); }
 }
 section.active, section:hover {
-  .fadein img { @include opacity(100); }
+  .fadein, .pathable-bg:before { @include opacity(100); }
+  .fadein:after { @include opacity(0); }
   .heart { color: red; }
 }
 section:before { content: '\00a7'; position: absolute; bottom: -27px; left: 50%;
@@ -25,8 +27,15 @@ section:before { content: '\00a7'; position: absolute; bottom: -27px; left: 50%;
 section:after { content: ' '; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
 .html5-bg { background: hash('../img/html5-small-gray.png') no-repeat; }
-.nodejs-bg { background: hash('../img/nodejs-small-gray.jpg') center no-repeat; }
+.nodejs-bg { background: hash('../img/nodejs-small-gray.jpg') no-repeat; }
 .javascript-bg { background: hash('../img/javascript-small-gray.jpg') no-repeat; }
+
+.pathable-bg {
+  z-index: 1; position: relative;
+  &:after { background: hash('../img/pathable-light-gray.png') center no-repeat; }
+  &:before { background: hash('../img/pathable-light.png') center no-repeat; @include opacity(0); }
+  &:before, &:after { z-index: -1; content: ' '; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+}
 
 nav { position: fixed; left: 50%; margin-left: 320px; }
 
