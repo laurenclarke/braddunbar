@@ -2,7 +2,7 @@
 
 echo "module.exports ="
 
-for f in $*
+for f in $@
 do
-	printf "  '/$f': '/$f?%s'\n" "`git hash-object $f`"
+	printf "  '/$f': '/$f?%s'\n" "$(git hash-object $f)"
 done

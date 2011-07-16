@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
-v=`sass -v | sed 's/[^0-9.]//g'`
-if [ -z `semver -v "$v" -r ">=3.1"` ]
+v="$(sass -v | sed 's/[^0-9.]//g')"
+if [ -z "$(semver -v "$v" -r ">=3.1")" ]
 then
 	echo "sass@>=3.1 required"
 	false
@@ -18,4 +18,4 @@ while getopts ":mr:" opt; do
 done
 shift $((OPTIND-1))
 
-awk 'FNR==1 && NR!=1{print "\n"}{print}' $* | $sass
+awk 'FNR==1 && NR!=1{print "\n"}{print}' $@ | $sass

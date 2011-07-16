@@ -6,14 +6,10 @@ module Sass::Script::Functions
     assert_type url, :String
     url = url.to_s.gsub(/^["']|["']$/, '')
     Sass::Script::String.new({
-RUBY
-
-for f in $*
+$(for f in $@
 do
-	printf "      '$f' => 'url(\\'$f?%s\\')',\n" "`git hash-object $f`"
-done
-
-cat <<RUBY
+	printf "      '$f' => \"url(\\'$f?%s\\')\",\n" "$(git hash-object $f)"
+done)
     }[url.to_s])
   end
   declare :hash, :args => [:url]
