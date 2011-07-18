@@ -62,6 +62,7 @@ nav ul {
 .txc { text-align: center; }
 
 #education { background: hash('../img/usc.jpg') center 50px no-repeat; height: 325px; }
+#experience article ~ article { border-top: dashed 1px #eee; padding-top: 25px; }
 
 article img { display: block; margin: 0 auto; }
 
