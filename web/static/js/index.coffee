@@ -1,48 +1,41 @@
 
-Section = Backbone.View.extend
-
-  initialize: (options) ->
-    @_a = options.a
-
-  select: ->
-    @el.add(@_a).addClass 'active'
-
-  deselect: ->
-    @el.add(@_a).removeClass 'active'
-
-App = Backbone.View.extend
+class View extends Backbone.View
 
   initialize: ->
-    nav = $ 'nav'
+    super
+    @$el = $(@el)
 
-    @header = nav.find 'h1'
+class Section extends View
 
-    @sections = $('section').map ->
-      el = $ @
-      new Section {el, a: nav.find 'a[href=#' + (el.attr 'id') + ']'}
+  initialize: ->
+    super
+    @a = $("nav a[href=##{@el.id}]")
 
-    @update()
+  toggle: (toggle) ->
+    @$el.add(@a).toggleClass('active', toggle)
 
-  events:
-    scroll: 'update'
+class App extends View
 
-  update: _.debounce ->
-    top = @el.scrollTop()
+  events: ->
+    scroll: '_scroll'
 
-    @active?.deselect()
+  initialize: ->
+    super
+    @header = $('nav h1')
+    @sections = $('section').map -> new Section {el: @}
 
-    if top < @sections[0].el.offset().top
-      return @header.addClass 'hidden'
+  activate: (section) ->
+    @active?.toggle(false)
+    (@active = section)?.toggle(true)
+    @header.toggleClass('hidden', !@active)
 
-    @active = @sections[@sections.length - 1]
-    for i in [0...@sections.length]
-      if @sections[i].el.offset().top > top
-        @active = @sections[i - 1]
-        break
+  _scroll: _.debounce ->
+    scrollTop = @$el.scrollTop()
+    @activate _.detect @sections, (s) ->
+      top = s.$el.offset().top
+      nextTop = s.$el.next('section').offset()?.top
+      top < (scrollTop + 75) < (nextTop or Number.MAX_VALUE)
+  , 200
 
-    @active.select()
-    @header.removeClass 'hidden'
-
-  , 50
-
-app = new App {el: $ window}
+jQuery ($) ->
+  app = new App {el: window}

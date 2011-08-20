@@ -5,20 +5,20 @@ body { background: transparent; margin: 0 auto; width: 950px; }
 
 header h1 { text-align: center; }
 
-a, a:visited, a:active { color: #000; @include transition(all, .5s, ease); }
+a, a:visited, a:active { color: #000; @include single-transition(all, .5s, ease); }
 
 code { font-family: monospace; background: #eee; }
 
-.sections { @include box-shadow; background: #fff; }
-.heart { @include transition(all, .5s, ease); }
+.sections { @include single-box-shadow; background: #fff; }
+.heart { @include single-transition(all, .5s, ease); }
 
 section {
   position: relative; padding-bottom: 40px; margin-bottom: 15px; border-bottom: solid 1px #ddd;
-  .fadein { @include transition(all, .5s); }
+  .fadein { @include single-transition(all, .5s); }
   img.fadein { @include opacity(0); }
 }
 section.active, section:hover {
-  .fadein, .pathable-bg:before { @include opacity(100); }
+  .fadein, .pathable-bg:before { @include opacity(1); }
   .fadein:after { @include opacity(0); }
   .heart { color: red; }
 }
@@ -42,8 +42,8 @@ nav { position: fixed; left: 50%; margin-left: 320px; }
 h1, h2, nav ul li { font-family: 'Six Caps'; }
 h1 {
   font-weight: normal; padding: 10px 0 10px 0; font-size: 8em; margin-bottom: 0;
-  @include transition(all, .5s, ease);
-  a, a:visited, a:active { color: inherit; text-decoration: none; @include transition(all, .5s, ease); }
+  @include single-transition(all, .5s, ease);
+  a, a:visited, a:active { color: inherit; text-decoration: none; @include single-transition(all, .5s, ease); }
   a:hover { color: red; }
 }
 h1.hidden { @include opacity(0); a { cursor: default; } }
@@ -53,7 +53,7 @@ nav ul {
   margin: 0; padding: 0; list-style-type: none; font-size: 3em;
   li {
     list-style-type: none; padding: 0; margin: 0; line-height: 1em;
-    a, a:visited, a:hover, a:active { color: inherit; text-decoration: none; @include transition(all, .5s); }
+    a, a:visited, a:hover, a:active { color: inherit; text-decoration: none; @include single-transition(all, .5s); }
     a:hover, a.active { padding-left: 10px; color: red; }
   }
 }
