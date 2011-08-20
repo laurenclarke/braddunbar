@@ -1,8 +1,8 @@
 
 include_rules
 
-: ../img/*.jpg ../img/*.png |> $(hashcss) %f > %o |> hash.rb
+: ../img/*.jpg ../img/*.png |> !scss.hash |>
 
-: foreach *.scss | hash.rb $(scss) |> $(scss) -r hash.rb %f > %o |> %B.css
-: blueprint/screenprint.css screen.scss | hash.rb $(scss) |> $(scss) -m -r hash.rb %f > %o |> screen.min.css
-: ie.scss | hash.rb $(scss) |> $(scss) -m -r hash.rb %f > %o |> ie.min.css
+: foreach *.scss |> !scss.hash.compile |> %B.css
+: blueprint/screenprint.css screen.scss |> !scss.hash.min |> screen.min.css
+: ie.scss |> !scss.hash.min |> ie.min.css

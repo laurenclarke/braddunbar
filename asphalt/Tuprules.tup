@@ -1,0 +1,11 @@
+js=$(asphalt)/js
+css=$(asphalt)/css
+
+!js.min = | $(js)/min |> $(js)/min %f > %o |>
+!js.hash = | $(js)/hash |> $(js)/hash %f | coffee -cs > %o |>
+
+!scss = | $(css)/scss |> $(css)/scss %f > %o |>
+!scss.min = | $(css)/scss |> $(css)/scss -m %f > %o |>
+!scss.hash = | $(css)/hash |> $(css)/hash %f > %o |> hash.rb
+!scss.hash.compile = | hash.rb $(css)/hash |> $(css)/scss -r hash.rb %f > %o |>
+!scss.hash.min = | hash.rb $(css)/hash |> $(css)/scss -m -r hash.rb %f > %o |>

@@ -1,11 +1,4 @@
-web = $(TUP_CWD)/web
-js = $(web)/static/js
-css = $(web)/static/css
-tools = $(TUP_CWD)/tools
-hash = $(TUP_CWD)/hash.sh
-hashcss = $(TUP_CWD)/hashcss.sh
-scss = $(TUP_CWD)/scss.sh
-
 .gitignore
-
-!minjs = |> awk 'FNR==1 && NR!=1{print ";"}{print}' %f | uglifyjs -nc > %o |>
+tools = $(TUP_CWD)/tools
+asphalt=$(TUP_CWD)/asphalt
+include asphalt/Tuprules.tup

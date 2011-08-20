@@ -1,7 +1,6 @@
 include_rules
 
-: css/*.css css/blueprint/*.css js/*.js img/*.jpg img/*.png |> $(hash) %f > %o |> hash.coffee
-: hash.coffee |> coffee -c %f |> %B.js
+: css/*.css css/blueprint/*.css js/*.js img/*.jpg img/*.png |> !js.hash |> hash.js
 
 : $(tools)/SixCaps.ttf \
 	|> convert -size 75x75 xc:none -font %f -pointsize 100 -draw "text 12,75 'bd'" -resize 16x16 %o \

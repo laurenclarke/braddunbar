@@ -11,9 +11,9 @@ sass="sass -C --scss --trace"
 
 while getopts ":mr:" opt; do
 	case $opt in
-		(m) sass="$sass -t compressed";;
-		(r) sass="$sass -r $OPTARG";;
-		(\?) echo "invalid option: -$OPTARG"; exit;;
+		m) sass="$sass -t compressed";;
+		r) sass="$sass -r $OPTARG";;
+		\?) echo "invalid option: -$OPTARG"; exit;;
 	esac
 done
 shift $((OPTIND-1))
