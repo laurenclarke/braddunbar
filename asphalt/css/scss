@@ -7,7 +7,7 @@ then
 	false
 fi
 
-sass="sass -C --scss --trace"
+sass="sass -C --scss --compass --trace"
 
 while getopts ":mr:" opt; do
 	case $opt in
