@@ -1,5 +1,0 @@
-
-include_rules
-
-: ie.css |> !scss.min |> ie.min.css
-: print.css screen.css |> printf "%%s\n@media print {\n%%s\n}" "\$(cat screen.css)" "\$(cat print.css)" > %o |> screenprint.css

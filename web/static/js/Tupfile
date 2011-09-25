@@ -1,4 +1,0 @@
-include_rules
-
-: foreach *.coffee |> coffee -c %f |> %B.js
-: underscore.js backbone.js index.js |> !js.min |> index.min.js

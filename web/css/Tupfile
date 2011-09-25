@@ -1,0 +1,5 @@
+include_rules
+
+: ../img/*.jpg ../img/*.png | ../../css-hash |> ../../css-hash %f > %o |> hash.rb
+: foreach *.scss | ../../scss hash.rb |> ../../scss -r hash.rb %f > %o |> %B.css
+: foreach *.scss | ../../scss hash.rb |> ../../scss -m -r hash.rb %f > %o |> %B.min.css

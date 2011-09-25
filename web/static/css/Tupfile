@@ -1,8 +1,0 @@
-
-include_rules
-
-: ../img/*.jpg ../img/*.png |> !scss.hash |>
-
-: foreach *.scss |> !scss.hash.compile |> %B.css
-: blueprint/screenprint.css screen.scss |> !scss.hash.min |> screen.min.css
-: ie.scss |> !scss.hash.min |> ie.min.css

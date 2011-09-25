@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+  <title>Brad Dunbar</title>
+
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+
+  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Six+Caps'>
+  <link rel='stylesheet' href='<%= BD::Hash["/css/screen#{ENV['DEBUG'] ? '' : '.min'}.css"] %>'>
+
+  <!--[if IE]><link rel='stylesheet' href='<%= BD::Hash['/css/ie.css'] %>'><![endif]-->
+  <!--[if lt IE 9]><script src='<%= BD::Hash['/js/html5.js'] %>'></script><![endif]-->
+
+  <% unless ENV['DEBUG'] %>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22421833-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <% end %>
+</head>
+<body>
+</body>
+  <nav>
+    <h1 class='hidden'><a href='/'>Brad<br>Dunbar</a></h1>
+    <ul>
+      <li><a href='#web'>Web</a></li>
+      <li><a href='#tools'>Tools</a></li>
+      <li><a href='#experience'>Experience</a></li>
+      <li><a href='#education'>Education</a></li>
+    </ul>
+  </nav>
+  <div class='sections'>
+    <header>
+      <h1><a href='/'>Brad Dunbar</a></h1>
+    </header>
+    <hr>
+    <section id='web'>
+      <article>
+        <h2>Html<span>&#x2770;&#x2771;</span></h2>
+        <p>
+          Html is the beautiful substrate of the web.  Finding more
+          semantically correct ways to express content is a
+          constantly evolving task.  I'm definitely on board with the
+          changes brought about by html5 and I think they will make
+          the web a better place.  Html audio is great and <em>of
+          course</em> I have a strong opinion about html video
+          codecs!
+        </p>
+        <div class='left html5-bg'>
+          <img class='fadein left' src='<%= BD::Hash['/img/html5-small.png'] %>'>
+        </div>
+        <p>
+          On the other hand, a nice big helping of pragmatism can go
+          a very long way.  Sometimes things should just be as simple
+          as they possibly can and that means regular old
+          technologies and techniques.  I'm ok with that and I
+          actually think its pretty great sometimes.
+        </p>
+      </article>
+      <article>
+        <h2>Css<span>&#x273b;</span></h2>
+        <p>
+          Other than javascript, Writing cross browser style sheets
+          is probably where I have the most experience.  I've dealt
+          with peekaboo bugs, IE hacks, floats, and redesigned *ahem*
+          table layouts as semantic documents.
+        </p>
+        <p>
+          I'm of the opinion that anything worth doing is worth doing
+          using progressive enhancement and graceful degradation.
+          You shouldn't leave legacy users in the cold (however much
+          you want to) and more able clients should be given the most
+          advanced experience possible.
+        </p>
+      </article>
+      <article>
+        <h2>Javascript<span>&#x2774;&#x2775;</span></h2>
+        <p>
+          I <span class='heart'><3</span> javascript.
+          <code>(function(){})()</code> is a lexical scoping hug, and
+          <code>{}</code> is an object literal kiss.
+        </p>
+        <div class='right javascript-bg'>
+          <img class='fadein' src='<%= BD::Hash['/img/javascript-small.jpg'] %>'>
+        </div>
+        <p>
+          I know all the ins and outs of variable hoisting and the
+          implications of having function scope as opposed to block
+          scope.  Using <code>call</code> and <code>apply</code>
+          comes naturally and prototypal inheritence is way cooler
+          than the classical style.
+        </p>
+        <p>
+          I'm hopelessly obsessed with <a target='_blank'
+          href='http://nodejs.org'>node.js</a> and javascript has
+          become my everyday scripting language of choice.
+        </p>
+      </article>
+    </section>
+    <section id='tools'>
+      <h2>Tools</h2>
+      <article>
+        <h3>Environment _</h3>
+        <p>
+          I'm all about the command line.  I don't like to take my
+          hands off the keyboard if I don't have to and for my money
+          linux has the best tools for such an environment.  I've
+          used a number of different distros, but I don't have a hard
+          preference as long as my favorite unix tools are handy
+          (grep, sed, awk, etc).
+        </p>
+        <div class='right nodejs-bg'>
+          <img class='fadein' src='<%= BD::Hash['/img/nodejs-small.jpg'] %>'>
+        </div>
+        <p>
+          As stated above, I have become infatuated with <a
+          target='_blank' href='http://nodejs.org'>node.js</a>.  If
+          you have a project that needs to be written with node,
+          please let me know as soon as possible.  Seriously, I might
+          do it for free.  Ok, ok, I don't work for free.  (But
+          really, I might pay
+          you to work on it.)
+        </p>
+      </article>
+      <article>
+        <h3>Source Control &#x00b1;&#x00b1;&#x00b1;</h3>
+        <p>
+          Source control is absolutely fundamental to any software
+          project and using it correctly makes things go much more
+          smoothly.  Git is definitely what I'm most comfortable
+          with.  It's fast, simple and rock-solid.
+          <code>stash</code>, <code>rebase</code>, and
+          <code>log</code> save me huge amounts of time.
+        </p>
+        <p>
+          I also have fairly extensive experience with subversion.
+          DVCS is the future of source control but in the meantime
+          svn is still the industry standard so I can merge tree
+          conflicts without breaking a sweat.
+        </p>
+        <p>
+          Besides git and subversion, I have a working knowledge of
+          mercurial and bazaar.  Nothing fancy mind you, but given
+          the need I could find my way around.
+        </p>
+      </article>
+    </section>
+    <section id='experience'>
+      <h2>Work Experience</h2>
+      <article>
+        <div>
+          <h3>FrontEnd Engineer</h3>
+          <a href='http://pathable.com'><strong>Pathable Inc.</strong></a>
+          <p>
+            <em>Remote<br>Jun 2011 - Present</em>
+          </p>
+        </div>
+        <div class='pathable-bg fadein'>
+          <img class='left' src='<%= BD::Hash['/img/coffeecup.png'] %>'>
+          <p>
+            I'm currently hacking to create a community and social
+            network for conferences and events through coffeescript.
+            Besides writing lots of coffeescript I'm also enjoying the
+            opportunity to dig into ruby and rails, something I've
+            wanted to do for a long while.
+          </p>
+          <p>
+            It's by far the best environment for writing code I've ever
+            worked in.  The people I work with are very talented and it
+            barely feels like work.
+          </p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <h3>Senior Developer</h3>
+          <strong>General Information Systems</strong>
+          <p>
+            <em>Chapin SC<br>Nov 2010 - Jun 2011</em>
+          </p>
+        </div>
+        <div>
+          <p>
+            I helped to streamline a rather large javascript codebase,
+            along with a good helping of backend development using an
+            MVC paradigm.  I also helped out other developers who
+            didn't have much experience writing javascript.
+          </p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <h3>Lead Developer</h3>
+          <strong>CGM Computer Consulting</strong>
+          <p>
+            <em>Columbia SC<br>Oct 2008 - Nov 2010</em>
+          </p>
+        </div>
+        <div>
+          <p>
+            As the primary developer, I created a custom CMS for
+            the Basic Combat Training unit at Fort Jackson SC.
+            Since I was the only developer, I learned a great deal
+            about cleaning up my own messes and just making things work.
+          </p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <h3>Web Developer</h3>
+          <strong>Seibels Bruce Insurance</strong>
+          <p>
+            <em>Columbia SC<br>Sep 2007 - Oct 2008</em>
+          </p>
+        </div>
+        <div>
+          <p>
+            I worked alongside a team of developers on high traffic,
+            customer facing line of business web appli...blah blah blah
+            blah blah.
+          </p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <h3>Web Developer</h3>
+          <strong>SCANA Services</strong>
+          <p>
+            <em>Columbia SC<br>Mar 2006 - Sep 2007</em>
+          </p>
+        </div>
+        <div>
+          <p>
+            I worked alongside a team of developers on high traffic,
+            customer facing line of business web appli...blah blah blah
+            blah blah.
+          </p>
+        </div>
+      </article>
+    </section>
+    <section id='education'>
+      <h2>Education</h2>
+      <article class="bs">
+        <h3>Bachelor of Science</h3>
+        <strong>Computer Engineering</strong>
+        <br>
+        <em>May 11<sup>th</sup>, 2007</em>
+      </article>
+      <article class="phd">
+        <h3>Doctor of Philosophy</h3>
+        <strong>Software Engineering</strong>
+        <br>
+        <em>in progress</em>
+      </article>
+    </section>
+    <div id="colophon">
+      <div>
+        <h2>Contact</h2>
+        <p>
+          If you would like to contact me about a job (or just shoot the
+          breeze) please email <a
+          href='mailto:brad@obscureminutiae.com'>brad@obscureminutiae.com</a>.
+          I am available for contract and freelance work on a case by
+          case basis.
+        </p>
+        <p>
+          This document is by no means exhaustive but I will be glad to
+          furnish answers for any questions you may have about my
+          qualifications, experience, and general demeanor.
+        </p>
+      </div>
+      <div>
+        <h2>Location</h2>
+        <p>
+          I am located in Lexington, South Carolina, and I am mostly
+          looking for positions I can handle sans pants.  However, I
+          might be willing to commute a small distance several times a
+          week for the right position.
+        </p>
+      </div>
+      <div>
+        <h2>Blog</h2>
+        <p>
+          If you'd like to see what else I'm up to you can check out my
+          blog at <a
+          href='http://obscureminutiae.com'>obscureminutiae.com</a>.
+          I'll be posting details of my projects and other musings there
+          as they come to me.
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>
+      &copy; <%= Time.new.year %> brad dunbar |
+      <a href='http://github.com/braddunbar/braddunbar'>source</a> |
+      <a href='http://slicehost.com'>hosting</a>
+    </p>
+  </footer>
+  <% if ENV['DEBUG'] %>
+  <script src='<%= BD::Hash['/js/jquery.js'] %>'></script>
+  <script src='<%= BD::Hash['/js/underscore.js'] %>'></script>
+  <script src='<%= BD::Hash['/js/backbone.js'] %>'></script>
+  <script src='<%= BD::Hash['/js/index.js'] %>'></script>
+  <% else %>
+  <script src='<%= BD::Hash['/js/index.min.js'] %>'></script>
+  <% end %>
+</html>

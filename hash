@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+cat <<RUBY
+module BD
+  Hash = {
+$(for f in $@
+do
+	printf "  '/$f' => '/$f?%s',\n" "$(git hash-object $f)"
+done)
+  }
+end
+RUBY

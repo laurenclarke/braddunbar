@@ -1,3 +1,10 @@
 include_rules
 
-:foreach *.coffee |> coffee -c %f |> %B.js
+: css/*.css js/*.js img/*.jpg img/*.png | ../hash |> ../hash %f > %o |> hash.rb
+
+: ../SixCaps.ttf \
+	|> convert -size 75x75 xc:none -font %f -pointsize 100 -draw "text 12,75 'bd'" -resize 16x16 %o \
+	|> favicon.ico
+
+: index.html.erb | hash.rb |> erb -r hash.rb %f > %o |> index.html
+: index.html.erb | hash.rb |> env DEBUG=true erb -r hash.rb %f > %o |> index.debug.html
