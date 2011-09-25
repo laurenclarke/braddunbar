@@ -6,7 +6,6 @@
 @import "blueprint/scaffolding";
 
 @include blueprint-typography;
-@include blueprint-grid;
 @include blueprint-scaffolding;
 
 html { background: hash('../img/paisley-texture.jpg') #ccc; background-attachment: fixed; }
